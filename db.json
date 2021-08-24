@@ -1,0 +1,18 @@
+{
+  "services": [
+    {
+      "brand": "Маникюр",
+      "description": "Качественная шпатлевка ваших ногтей",
+      "price": "1000",
+      "image": "https://makeup.ru/storage/articles/70748/conversions/xRM5n3wGh9xkfNxLjJ3chZYcuM6ZUwircIplXK4u-preview_vertical_full.jpg",
+      "id": 1
+    },
+    {
+      "brand": "Покраска волос",
+      "description": "Ваши волосы будут как у Даши Корейки",
+      "price": "1500",
+      "image": "http://video-pricheski.ru/photo/img/ambre-okrashivanie-volos-foto-na-rusye-1.jpg",
+      "id": 3
+    }
+  ]
+}

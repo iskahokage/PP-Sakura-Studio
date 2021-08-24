@@ -1,0 +1,87 @@
+.main {
+  min-height: 80vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main .serviceList-title {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.main .serviceList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main .serviceList-card {
+  max-width: 300px;
+  width: 100%;
+  max-height: auto;
+  background-color: #708d81;
+  padding: 15px;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .serviceList-card .serviceList-serviceTitle {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.main .serviceList-card .serviceList-serviceDescription {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.main .serviceList-card .serviceList-servicePrice {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.main .serviceList-card .serviceList-img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.main .serviceList-card .button {
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+}
+
+.main .serviceList-card .delete {
+  background-color: #ff033e;
+}
+
+.main .serviceList-card .delete:focus {
+  background-color: #e23a3a;
+}
+
+.main .serviceList-card .edit {
+  background-color: #50c878;
+}
+
+.main .serviceList-card .edit:focus {
+  background-color: #2d5e3e;
+}
+/*# sourceMappingURL=Home.css.map */

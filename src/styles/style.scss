@@ -1,0 +1,13 @@
+@import "../components/Footer/assets/Footer.css";
+@import "../components/Home/assets/Home.css";
+@import "../components/Admin/assets/AddService.css";
+@import "../pages/WelcomePage/assets/WelcomePage.css";
+@import '../pages/RegistrationPage/assets/RegistrationPage.css';
+@import '../pages/LoginPage/assets/LoginPage.css';
+@import '../variables/variables.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $montserratFont;
+}

@@ -1,0 +1,11 @@
+.addService-container{
+    min-height: auto;
+    .addService-title{
+        text-align: center;
+    }
+    .addService-form{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: space-around;
+    }
+}
