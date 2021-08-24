@@ -1,0 +1,17 @@
+.addService-container {
+  min-height: auto;
+}
+
+.addService-container .addService-title {
+  text-align: center;
+}
+
+.addService-container .addService-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+/*# sourceMappingURL=AddService.css.map */

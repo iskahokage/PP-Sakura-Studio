@@ -1,0 +1,12 @@
+.footer {
+  background-color: #001427;
+  min-height: 200px;
+}
+
+.footer .copyrigth {
+  color: #fff;
+  position: relative;
+  top: 150px;
+  text-align: center;
+}
+/*# sourceMappingURL=Footer.css.map */
