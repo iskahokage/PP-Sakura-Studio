@@ -86,6 +86,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
   const { auth } = useContext(authContext);
+  const {user} = auth;
+  console.log(user);
     const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -121,7 +123,7 @@ const Header = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
       <MenuItem onClick={()=>auth.signOut()}>Выйти</MenuItem>
     </Menu>

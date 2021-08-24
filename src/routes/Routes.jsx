@@ -9,32 +9,34 @@ import Home from "../components/Home/Home";
 import ServiceContextProvider from "../contexts/ServiceContext";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegistrationPage from "../pages/RegistrationPage/RegistrationPage";
-import WelcomePage from "../pages/WelcomePage/WelcomePage";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Chat from "../components/Chat/Chat";
 
 const Routes = () => {
   const { auth } = useContext(authContext);
-  const [ user ] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   return user ? (
-    <Switch>
-      <Route exact path="/home" component={Home} />
-      <Route exact path="/edit" component={EditServicePage} />
-      <Route exact path="/add" component={AddService} />
-      <Redirect to='/home'/>
-    </Switch>
+    <ServiceContextProvider>
+      <Switch>
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/edit" component={EditServicePage} />
+        <Route exact path="/add" component={AddService} />
+        <Route exact path='/chat' component={Chat}/>
+        <Redirect to="/home" />
+      </Switch>
+    </ServiceContextProvider>
   ) : (
     <Switch>
-      <Route exact path="/" component={WelcomePage} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/registration" component={RegistrationPage} />
-      <Redirect to='/login'/>
+      <Redirect to="/login" />
     </Switch>
   );
   // return (
   //   <BrowserRouter>
   //     <ServiceContextProvider>
-  //       
+  //
   //       <Switch>
   //
   //

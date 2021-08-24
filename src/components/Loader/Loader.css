@@ -1,6 +1,7 @@
 .loaderContainer{
     display: flex;
     min-height: 100vh;
+    background-color: #f4d58d;
 }
 .lds-dual-ring {
     display: inline-block;
