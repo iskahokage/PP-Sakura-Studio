@@ -1,11 +1,15 @@
 .main {
-  min-height: 80vh;
+  min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
+  background-image: url("../../../assets/img/bg.png");
+  background-repeat: space;
+  background-position: left;
+  background-size: contain;
 }
 
 .main .serviceList-title {
-  margin-top: 100px;
+  margin: 50px 0 20px 0;
   text-align: center;
 }
 
@@ -36,12 +40,16 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 15px;
 }
 
 .main .serviceList-card .serviceList-serviceTitle {
   text-align: center;
   font-weight: 700;
   font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .main .serviceList-card .serviceList-serviceDescription {
@@ -61,27 +69,30 @@
   max-height: 250px;
 }
 
-.main .serviceList-card .button {
+.main .serviceList-card .serviceList-buttonContainer .button {
   border: none;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
-  margin: 0 10px 0 10px;
+  margin: 0 0 0 10px;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
 }
 
-.main .serviceList-card .delete {
-  background-color: #ff033e;
-}
-
-.main .serviceList-card .delete:focus {
+.main .serviceList-card .serviceList-buttonContainer .delete {
   background-color: #e23a3a;
+  margin-left: 0px;
 }
 
-.main .serviceList-card .edit {
+.main .serviceList-card .serviceList-buttonContainer .delete:focus {
+  background-color: #663333;
+}
+
+.main .serviceList-card .serviceList-buttonContainer .edit {
   background-color: #50c878;
 }
 
-.main .serviceList-card .edit:focus {
+.main .serviceList-card .serviceList-buttonContainer .edit:focus {
   background-color: #2d5e3e;
 }
 /*# sourceMappingURL=Home.css.map */

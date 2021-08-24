@@ -16,6 +16,9 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { authContext } from '../..';
+import { Avatar, Button } from '@material-ui/core';
+import logo from '../../assets/img/flower.png'
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -27,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     title: {
       display: 'none',
       [theme.breakpoints.up('sm')]: {
-        display: 'block',
+        display: 'flex',
       },
     },
     search: {
@@ -81,12 +84,31 @@ const useStyles = makeStyles((theme) => ({
     },
     AppBar:{
       backgroundColor: '#001427',
+    },
+    goHome: {
+      display: 'flex',
+      justifyContent:'space-between',
+      alignItems: 'center',
+      color: '#fff',
+      textDecoration: 'none'
+    },
+    logo:{
+      marginLeft: "10px",
+      transitionDuration: "0.8s",
+      transitionProperty: "transform",
+      '&:hover':{
+        transform: "rotate(-360deg)",
+      }
+    },
+    goChat:{
+      textDecoration: "none",
+      color: 'inherit'
     }
   }));
 
 const Header = () => {
   const { auth } = useContext(authContext);
-  const {user} = auth;
+    const [user] = useAuthState(auth);
   console.log(user);
     const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -123,8 +145,7 @@ const Header = () => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>My Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>{user.email}</MenuItem>
       <MenuItem onClick={()=>auth.signOut()}>Выйти</MenuItem>
     </Menu>
   );
@@ -141,20 +162,10 @@ const Header = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
+        <IconButton color="inherit">
             <MailIcon />
-          </Badge>
         </IconButton>
         <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -199,17 +210,16 @@ const Header = () => {
             />
           </div>
           <div className={classes.grow} />
+          <NavLink to='/home' className={classes.goHome}>
+            Главная
+            <Avatar src={logo} className={classes.logo}/>
+          </NavLink>
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <NavLink to='/chat' className={classes.goChat}>
+              <IconButton color="inherit">
+                  <MailIcon />
+              </IconButton>
+            </NavLink>
             <IconButton
               edge="end"
               aria-label="account of current user"

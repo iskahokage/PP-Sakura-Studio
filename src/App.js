@@ -9,7 +9,7 @@ import ServiceContextProvider from "./contexts/ServiceContext";
 import Routes from "./routes/Routes";
 const useStyles = makeStyles(()=>({
   App:{
-    background:'#f4d58d'
+    background:'#eae0d5'
   }
 }))
 function App() {

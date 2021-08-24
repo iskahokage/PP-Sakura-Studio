@@ -28,7 +28,7 @@ const EditServicePage = () => {
                     <input name= "brand" onChange={handleEditInput} value={newEditItem.brand} type="text" />
                     <input name= "description" onChange={handleEditInput} value={newEditItem.description} type="text" />
                     <input name= "price" onChange={handleEditInput} value={newEditItem.price} type="text" />
-                    <input type="text" />
+                    <input name= 'image' onChange={handleEditInput} value={newEditItem.image} type="text" />
                     <Link to="/">
                      <button onClick={()=>saveService(newEditItem)}>Edit Product</button>
                     </Link>

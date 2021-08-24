@@ -1,6 +1,9 @@
-import { makeStyles } from "@material-ui/core";
+import { Container, makeStyles, Paper, TextField } from "@material-ui/core";
 import React, { useContext, useState } from "react";
 import { serviceContext } from "../../contexts/ServiceContext";
+import bg from '../../assets/img/bg2.png';
+
+
 
 const AddService = () => {
   const [inpTitle, setInpTitle] = useState("");
@@ -49,7 +52,7 @@ const AddService = () => {
         />
         </div>
         <div className="addService-inputContainer">
-        <p>Url для картинки услуги:</p>
+        <p>Url для картинки:</p>
         <input onChange={(e) => setInpImage(e.target.value)} type="text" />
         </div>
         <button onClick={handleClick}>Добавить услугу</button>
