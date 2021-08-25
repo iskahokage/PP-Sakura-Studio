@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { BrowserRouter } from "react-router-dom";
 import { authContext } from ".";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Loader from "./components/Loader/Loader";
 import ServiceContextProvider from "./contexts/ServiceContext";
@@ -23,16 +24,24 @@ function App() {
   return (
     <div className="App" className={classes.App}>
         <BrowserRouter>
+        <ServiceContextProvider>
         {
           user ? (
-            
+        
         <Header/>
           ):(
             ''
           )
         }
-        <ServiceContextProvider>
           <Routes/>
+          {
+          user ? (
+        
+        <Footer/>
+          ):(
+            ''
+          )
+        }
         </ServiceContextProvider>
         </BrowserRouter>
     </div>

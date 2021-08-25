@@ -22,6 +22,7 @@ const Chat = () => {
             displayName: user.displayName,
             photoURL: user.photoURL,
             text: value,
+            email: user.email,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         })
         setValue('')
@@ -32,23 +33,23 @@ const Chat = () => {
     console.log(user)
     return (
         <div className='chat'>
+            <p className='chatTitle'>Чат</p>
             <div className="chatContainer">
                 {message.map(message =>
                     <div className='messageContainer' style={{
                         border: user.uid === message.uid ? '2px solid green' : '2px dashed red',
                         marginLeft: user.uid === message.uid ? 'auto' : '10px',
-
-
+                        borderRadius: '15px',
                     }}>
                         
-                            <div>
-                                {message.displayName}
+                            <div className='userMessage'>
+                                <Avatar src={message.photoURL} />
+                                {message.email}
+                                <p className='messageBody'>
+                                    {message.text}
+                                </p>
                             </div>
-                            <Avatar src={message.photoURL} />
 
-                        <div>
-                            {message.text}
-                        </div>
                     </div>
                 )}
             </div>

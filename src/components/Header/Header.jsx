@@ -1,119 +1,152 @@
-import React, { useContext } from 'react';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { authContext } from '../..';
-import { Avatar, Button } from '@material-ui/core';
-import logo from '../../assets/img/flower.png'
-import { NavLink } from 'react-router-dom';
+import React, { useContext, useEffect } from "react";
+import { alpha, makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
+import MenuIcon from "@material-ui/icons/Menu";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import MailIcon from "@material-ui/icons/Mail";
+import MoreIcon from "@material-ui/icons/MoreVert";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { authContext } from "../..";
+import { Avatar, Badge, Button, Input, Link } from "@material-ui/core";
+import logo from "../../assets/img/flower.png";
+import { NavLink, useHistory } from "react-router-dom";
+import { serviceContext, useProducts } from "../../contexts/ServiceContext";
+import HomeIcon from "@material-ui/icons/Home";
+
+import BookmarkIcon from "@material-ui/icons/Bookmark";
 
 const useStyles = makeStyles((theme) => ({
-    grow: {
-      flexGrow: 1,
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    display: "none",
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      display: "flex",
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
+  },
+  search: {
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    "&:hover": {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-    title: {
-      display: 'none',
-      [theme.breakpoints.up('sm')]: {
-        display: 'flex',
-      },
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(3),
+      width: "auto",
     },
-    search: {
-      position: 'relative',
-      borderRadius: theme.shape.borderRadius,
-      backgroundColor: alpha(theme.palette.common.white, 0.15),
-      '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-      },
-      marginRight: theme.spacing(2),
-      marginLeft: 0,
-      width: '100%',
-      [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
-      },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  inputRoot: {
+    color: "inherit",
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "20ch",
     },
-    searchIcon: {
-      padding: theme.spacing(0, 2),
-      height: '100%',
-      position: 'absolute',
-      pointerEvents: 'none',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+  },
+  sectionDesktop: {
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
     },
-    inputRoot: {
-      color: 'inherit',
+  },
+  sectionMobile: {
+    display: "flex",
+    [theme.breakpoints.up("md")]: {
+      display: "none",
     },
-    inputInput: {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '20ch',
-      },
+  },
+  AppBar: {
+    backgroundColor: "#001427",
+  },
+  goHome: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    color: "inherit",
+    textDecoration: "none",
+    "&:hover": {
+      color: "pink",
     },
-    sectionDesktop: {
-      display: 'none',
-      [theme.breakpoints.up('md')]: {
-        display: 'flex',
-      },
+  },
+  logo: {
+    marginLeft: "10px",
+    transitionDuration: "0.8s",
+    transitionProperty: "transform",
+    "&:hover": {
+      transform: "rotate(-360deg)",
     },
-    sectionMobile: {
-      display: 'flex',
-      [theme.breakpoints.up('md')]: {
-        display: 'none',
-      },
+  },
+  goCatalog: {
+    color: "#fff",
+    textDecoration: "none",
+    "&:hover": {
+      color: "pink",
     },
-    AppBar:{
-      backgroundColor: '#001427',
+  },
+  goChat: {
+    textDecoration: "none",
+    color: "inherit",
+    "&:hover": {
+      color: "pink",
     },
-    goHome: {
-      display: 'flex',
-      justifyContent:'space-between',
-      alignItems: 'center',
-      color: '#fff',
-      textDecoration: 'none'
+  },
+  goProfile: {
+    "&:hover": {
+      color: "pink",
     },
-    logo:{
-      marginLeft: "10px",
-      transitionDuration: "0.8s",
-      transitionProperty: "transform",
-      '&:hover':{
-        transform: "rotate(-360deg)",
-      }
+  },
+  goFav: {
+    color: "inherit",
+    textDecoration: 'none',
+    "&:hover": {
+      color: "pink",
     },
-    goChat:{
-      textDecoration: "none",
-      color: 'inherit'
-    }
-  }));
+  },
+}));
 
 const Header = () => {
+  const { cart, getCart } = useProducts();
+  const { getServicesData } = useContext(serviceContext);
+
   const { auth } = useContext(authContext);
-    const [user] = useAuthState(auth);
-  console.log(user);
-    const classes = useStyles();
+  const [user] = useAuthState(auth);
+
+  const classes = useStyles();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+  useEffect(() => {
+    getCart();
+  }, []);
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -133,39 +166,61 @@ const Header = () => {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
-  const menuId = 'primary-search-account-menu';
+  const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
       <MenuItem onClick={handleMenuClose}>{user.email}</MenuItem>
-      <MenuItem onClick={()=>auth.signOut()}>Выйти</MenuItem>
+      <MenuItem onClick={() => auth.signOut()}>Выйти</MenuItem>
     </Menu>
   );
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton color="inherit">
+        <NavLink to="/home" className={classes.goHome}>
+          <IconButton color="inherit">
+            <HomeIcon />
+          </IconButton>
+          <span>Sakura Studio</span>
+        </NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink to="/cart" className={classes.goFav}>
+          <IconButton aria-label="show 4 new mails" color="inherit">
+            <Badge
+              badgeContent={cart.services ? cart.services.length : 0}
+              color="secondary"
+            >
+              <BookmarkIcon />
+            </Badge>
+          </IconButton>
+          <span>Избранное</span>
+        </NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink to="/chat" className={classes.goChat}>
+          <IconButton color="inherit">
             <MailIcon />
-        </IconButton>
-        <p>Messages</p>
+          </IconButton>
+          <span>Messages</span>
+        </NavLink>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -176,7 +231,7 @@ const Header = () => {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        <span>Profile</span>
       </MenuItem>
     </Menu>
   );
@@ -185,42 +240,33 @@ const Header = () => {
     <div className={classes.grow}>
       <AppBar position="static" className={classes.AppBar}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Sakura Studio
+            <NavLink to="/home" className={classes.goHome}>
+              Sakura Studio
+              <Avatar src={logo} className={classes.logo} />
+            </NavLink>
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-          <div className={classes.grow} />
-          <NavLink to='/home' className={classes.goHome}>
-            Главная
-            <Avatar src={logo} className={classes.logo}/>
+          <NavLink to="/catalog" className={classes.goCatalog}>
+            Каталог
           </NavLink>
           <div className={classes.sectionDesktop}>
-            <NavLink to='/chat' className={classes.goChat}>
+            <NavLink to="/cart" className={classes.goFav}>
+              <IconButton aria-label="show 4 new mails" color="inherit">
+                <Badge
+                  badgeContent={cart.services ? cart.services.length : 0}
+                  color="secondary"
+                >
+                  <BookmarkIcon />
+                </Badge>
+              </IconButton>
+            </NavLink>
+            <NavLink to="/chat" className={classes.goChat}>
               <IconButton color="inherit">
-                  <MailIcon />
+                <MailIcon />
               </IconButton>
             </NavLink>
             <IconButton
+              className={classes.goProfile}
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}

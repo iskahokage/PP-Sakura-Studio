@@ -1,43 +1,80 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { useContext } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { serviceContext } from '../../contexts/ServiceContext';
+import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useContext } from "react";
+import { Link, NavLink, useHistory } from "react-router-dom";
+import { serviceContext } from "../../contexts/ServiceContext";
+import Loader from "../Loader/Loader";
 
 const EditServicePage = () => {
-    
-    const {serviceToEdit, saveService} = useContext(serviceContext);
-    const [newEditItem, setNewEditItem] = useState(serviceToEdit)
-        useEffect(()=>{
-            setNewEditItem(serviceToEdit)
-        }, [serviceToEdit])
+  const { serviceToEdit, saveService } = useContext(serviceContext);
+  const [newEditItem, setNewEditItem] = useState(serviceToEdit);
+  const history = useHistory();
+  useEffect(() => {
+    setNewEditItem(serviceToEdit);
+  }, [serviceToEdit]);
 
-    function handleEditInput(e){
-        let newService ={
-            ...newEditItem,
-        [e.target.name]:e.target.value,
-        }
-        setNewEditItem(newService)
-    }
-    return (
-        <div>
-            {newEditItem ?
+  function handleEditInput(e) {
+    let newService = {
+      ...newEditItem,
+      [e.target.name]: e.target.value,
+    };
+    setNewEditItem(newService);
+  }
+  return (
+    <div className="main">
+      {newEditItem ?
             <>
-                <form>
-                    <input name= "brand" onChange={handleEditInput} value={newEditItem.brand} type="text" />
-                    <input name= "description" onChange={handleEditInput} value={newEditItem.description} type="text" />
-                    <input name= "price" onChange={handleEditInput} value={newEditItem.price} type="text" />
-                    <input name= 'image' onChange={handleEditInput} value={newEditItem.image} type="text" />
-                    <Link to="/">
-                     <button onClick={()=>saveService(newEditItem)}>Edit Product</button>
-                    </Link>
-                </form>
+                
+            <div className="addService-container">
+              <h1 className="addService-title">Изменение услуги</h1>
+              <form className="addService-form">
+                <div className="addService-inputContainer">
+                  <p>Название услуги:</p>
+                  <input
+                  name= "brand"
+                    value={newEditItem.brand}
+                    onChange={handleEditInput}
+                    type="text"
+                  />
+                </div>
+                <div className="addService-inputContainer">
+                  <p>Цена услуги:</p>
+                  <input
+                  name= "description"
+                    value={newEditItem.description}
+                    onChange={handleEditInput}
+                    type="text"
+                  />
+                </div>
+                <div className="addService-inputContainer">
+                  <p>Описание услуги:</p>
+                  <input
+                  name= "price"
+                    value={newEditItem.price}
+                    onChange={handleEditInput}
+                    type="text"
+                  />
+                </div>
+                <div className="addService-inputContainer">
+                  <p>Url для картинки:</p>
+                  <input
+                  name= 'image'
+                    value={newEditItem.image}
+                    onChange={handleEditInput}
+                    type="text"
+                  />
+                </div>
+                <button onClick={() => saveService(newEditItem)} >
+                  Сохранить изменения
+                </button>
+              </form>
+            </div>
             </>
-            : <h1>LOADING...</h1>
+            : <Loader/>
             }
-        </div>
-    );
+    </div>
+  );
 };
 
 export default EditServicePage;
