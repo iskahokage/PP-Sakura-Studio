@@ -38,20 +38,20 @@ const EditServicePage = () => {
                     type="text"
                   />
                 </div>
-                <div className="addService-inputContainer">
-                  <p>Цена услуги:</p>
-                  <input
-                  name= "description"
-                    value={newEditItem.description}
-                    onChange={handleEditInput}
-                    type="text"
-                  />
-                </div>
+                  <div className="addService-inputContainer">
+                    <p>Цена услуги:</p>
+                    <input
+                    name= "price"
+                      value={newEditItem.price}
+                      onChange={handleEditInput}
+                      type="text"
+                    />
+                  </div>
                 <div className="addService-inputContainer">
                   <p>Описание услуги:</p>
                   <input
-                  name= "price"
-                    value={newEditItem.price}
+                  name= "description"
+                    value={newEditItem.description}
                     onChange={handleEditInput}
                     type="text"
                   />
@@ -65,7 +65,7 @@ const EditServicePage = () => {
                     type="text"
                   />
                 </div>
-                <button onClick={() => saveService(newEditItem)} >
+                <button onClick={() => (saveService(newEditItem), history.push('/catalog'))}>
                   Сохранить изменения
                 </button>
               </form>
