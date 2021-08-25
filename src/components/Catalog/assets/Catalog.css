@@ -1,0 +1,159 @@
+.main {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: url("../../../assets/img/bg.png");
+  background-repeat: space;
+  background-position: left;
+  background-size: contain;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .filter {
+  margin: auto;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .filter p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.main .filter .group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .serviceList-title {
+  margin: 50px 0 20px 0;
+  text-align: center;
+}
+
+.main .serviceList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main .serviceList-card {
+  max-width: 300px;
+  width: 100%;
+  max-height: auto;
+  background-color: #708d81;
+  padding: 15px;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 15px;
+}
+
+.main .serviceList-card .serviceList-serviceTitle {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.main .serviceList-card .serviceList-serviceDescription {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.main .serviceList-card .serviceList-servicePrice {
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.main .serviceList-card .serviceList-img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.main .serviceList-card .serviceList-buttonContainer .button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 0 0 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.main .serviceList-card .serviceList-buttonContainer .delete {
+  background-color: #e23a3a;
+  margin-left: 0px;
+}
+
+.main .serviceList-card .serviceList-buttonContainer .delete:focus {
+  background-color: #663333;
+}
+
+.main .serviceList-card .serviceList-buttonContainer .edit {
+  background-color: #50c878;
+}
+
+.main .serviceList-card .serviceList-buttonContainer .edit:focus {
+  background-color: #2d5e3e;
+}
+
+.main .paginationContainer {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .searchContainer {
+  margin: auto;
+  margin-left: 30px;
+}
+/*# sourceMappingURL=Catalog.css.map */
