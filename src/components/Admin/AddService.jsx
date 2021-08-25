@@ -40,7 +40,7 @@ const AddService = () => {
           <input
             value={inpPrice}
             onChange={(e) => setInpPrice(e.target.value)}
-            type="text"
+            type="number"
           />
         </div>
         <div className="addService-inputContainer">
