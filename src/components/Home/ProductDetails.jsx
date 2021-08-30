@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
+    marginTop: '20px',
     margin: 'auto',
     maxWidth: "80%",
   },
@@ -26,12 +27,16 @@ const useStyles = makeStyles((theme) => ({
   img: {
     margin: 'auto',
     display: 'block',
-    maxHeight: '50vh',
+    maxHeight: '300px',
+    height: "100%",
+    maxWidth: '300px',
+    width: "100%",
+
   },
   main_container: {
     display: "flex",
     flexDirection: "row",
-    flexWrap: "nowrap"
+    flexWrap: "wrap"
   },
   title:{
     fontSize: "24px",
