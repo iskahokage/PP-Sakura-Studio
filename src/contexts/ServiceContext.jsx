@@ -130,7 +130,7 @@ const ServiceContextProvider = ({ children }) => {
     let productToFind = cart.services.filter(
       (item) => item.item.id === service.id
     );
-    if (productToFind.length == 0) {
+    if (productToFind.length === 0) {
       cart.services.push(newService);
     } else {
       cart.services = cart.services.filter(

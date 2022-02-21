@@ -1,28 +1,17 @@
 .chat {
   min-height: 90vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
 }
-
 .chat .chatTitle {
   font-size: 32px;
   padding: 10px 0 0 0;
   text-align: center;
   font-weight: 700;
 }
-
 .chat .chatContainer {
   max-width: 1100px;
   width: 100%;
@@ -31,48 +20,24 @@
   min-height: 300px;
   border-radius: 30px;
   background-color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .chat .chatContainer .messageContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
   margin: 10px;
   padding: 15px;
   border: 2px solid black;
   width: 80%;
 }
-
 .chat .chatContainer .messageContainer .userMessage {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   width: 100%;
 }
-
 .chat .chatContainer .messageContainer .userMessage .messageBody {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-/*# sourceMappingURL=Chat.css.map */
+  align-self: flex-start;
+}/*# sourceMappingURL=Chat.css.map */

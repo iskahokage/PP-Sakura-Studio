@@ -5,18 +5,10 @@
   background-position: right;
   background-size: contain;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 .loginPage .loginPage-welcomeTitle {
   margin: auto;
   position: absolute;
@@ -24,23 +16,16 @@
   font-size: 32px;
   font-weight: 500;
 }
-
 .loginPage .loginPage-container {
   max-width: 500px;
   width: 100%;
   height: 320px;
   background-color: rgba(190, 190, 190, 0.5);
   border-radius: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: auto;
 }
-
 .loginPage .loginPage-container .loginPage-title {
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -48,46 +33,27 @@
   font-size: 30px;
   margin-top: 15px;
 }
-
 .loginPage .inputForm {
   width: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
   height: 200px;
 }
-
 .loginPage .inputForm * {
   margin-top: 2px;
 }
-
 .loginPage .inputForm .registrationButton {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
-
 .loginPage .loginPage-registerLink {
   text-align: end;
   margin-top: 40px;
   padding-right: 20px;
   padding-bottom: 20px;
 }
-
 .loginPage .loginPage-buttonContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-/*# sourceMappingURL=LoginPage.css.map */
+  flex-direction: column;
+}/*# sourceMappingURL=LoginPage.css.map */

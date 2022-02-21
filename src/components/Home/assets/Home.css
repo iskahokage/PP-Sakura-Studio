@@ -5,17 +5,14 @@
   background-position: left;
   background-size: contain;
 }
-
 .home .homeTitle {
   text-align: center;
   padding: 20px 0;
 }
-
 .home .homeDesc {
   text-align: center;
   font-size: 22px;
 }
-
 .home .homeContainer {
   background-image: url("../../../assets/img/bgMirrored.png");
   background-repeat: no-repeat;
@@ -26,34 +23,20 @@
   padding: 10px;
   min-height: 300px;
   background-color: #eae0d5;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .home .homeContainer .imgContainer {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .home .homeContainer .imgContainer .homeImg {
   width: 200px;
   height: 200px;
   border-radius: 10px;
-}
-/*# sourceMappingURL=Home.css.map */
+}/*# sourceMappingURL=Home.css.map */

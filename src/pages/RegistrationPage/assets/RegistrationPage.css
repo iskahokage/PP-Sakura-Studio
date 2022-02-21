@@ -5,27 +5,18 @@
   background-position: right;
   background-size: contain;
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .registrationPage .registrationPage-container {
   max-width: 500px;
   width: 100%;
   height: 300px;
   background-color: rgba(190, 190, 190, 0.5);
   border-radius: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin: auto;
 }
-
 .registrationPage .registrationPage-container .registrationPage-title {
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -33,30 +24,18 @@
   font-size: 30px;
   margin-top: 15px;
 }
-
 .registrationPage .inputForm {
   width: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
   height: 200px;
 }
-
 .registrationPage .inputForm * {
   margin-top: 2px;
 }
-
 .registrationPage .inputForm .registrationButton {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   text-decoration: none;
-}
-/*# sourceMappingURL=RegistrationPage.css.map */
+}/*# sourceMappingURL=RegistrationPage.css.map */

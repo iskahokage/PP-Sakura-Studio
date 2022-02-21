@@ -2,32 +2,23 @@
   min-height: auto;
   margin-top: 40px;
 }
-
 .addService-container .addService-title {
   margin-bottom: 40px;
   text-align: center;
 }
-
 .addService-container .addService-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 20px;
   border-radius: 15px;
-  -webkit-box-shadow: 3px 3px 7px black;
-          box-shadow: 3px 3px 7px black;
+  box-shadow: 3px 3px 7px black;
   background-image: url("../../../assets/img/bg2.png");
   background-position: 115px -310px;
   background-size: cover;
   background-repeat: no-repeat;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-
 .addService-container .addService-form p {
   font-size: 16px;
   font-weight: 600;
-}
-/*# sourceMappingURL=AddService.css.map */
+}/*# sourceMappingURL=AddService.css.map */

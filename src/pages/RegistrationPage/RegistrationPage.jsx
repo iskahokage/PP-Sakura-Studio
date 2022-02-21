@@ -1,9 +1,7 @@
-import { Button, IconButton, InputAdornment, OutlinedInput, TextField } from "@material-ui/core";
-import { Visibility, VisibilityOff } from "@material-ui/icons";
+import { Button, TextField } from "@material-ui/core";
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { authContext } from "../..";
-import firebase from "firebase";
 
 
 
@@ -14,7 +12,7 @@ const RegistrationPage = () => {
     const [email,setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
+    const [passwordError, setPasswordError] = useState();
     
     const clearError = () =>{
         setEmailError('');

@@ -1,16 +1,14 @@
-@import url(c:\Users\ISKENDER\Desktop\makers-prom-app\src\components\Footer\assets\Footer.css);
-@import url(c:\Users\ISKENDER\Desktop\makers-prom-app\src\components\Home\assets\Home.css);
-@import url(c:\Users\ISKENDER\Desktop\makers-prom-app\src\components\Admin\assets\AddService.css);
-@import url(c:\Users\ISKENDER\Desktop\makers-prom-app\src\pages\RegistrationPage\assets\RegistrationPage.css);
-@import url(c:\Users\ISKENDER\Desktop\makers-prom-app\src\pages\LoginPage\assets\LoginPage.css);
-@import url(c:\Users\ISKENDER\Desktop\makers-prom-app\src\components\Chat\assets\Chat.css);
-@import url(c:\Users\ISKENDER\Desktop\makers-prom-app\src\components\Catalog\assets\Catalog.css);
+@import "../components/Footer/assets/Footer.css";
+@import "../components/Home/assets/Home.css";
+@import "../components/Admin/assets/AddService.css";
+@import '../pages/RegistrationPage/assets/RegistrationPage.css';
+@import '../pages/LoginPage/assets/LoginPage.css';
+@import '../components/Chat/assets/Chat.css';
+@import '../components/Catalog/assets/Catalog.css';
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

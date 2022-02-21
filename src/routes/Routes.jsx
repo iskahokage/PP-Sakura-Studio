@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { authContext } from "..";
 import AddService from "../components/Admin/AddService";
 import EditServicePage from "../components/Admin/EditServicePage";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
 import Home from "../components/Home/Home";
 import ServiceContextProvider from "../contexts/ServiceContext";
 import LoginPage from "../pages/LoginPage/LoginPage";
