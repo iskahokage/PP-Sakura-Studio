@@ -28,7 +28,7 @@ const Home = () => {
       </Paper>
       <Paper elevation={3}  className={'homeContainer'}>
         <div className='imgContainer'>
-          <img className='homeImg' src="http://persona.tiamatt.ru/images/mp-photo5.jpg" alt="" />
+          <img className='homeImg' src="https://ms1.relax.by/images/c87dc67b87bcc691454c6f2c700c6179/thumb/w=480,h=480,q=34/place_gallery_photo/6b/ac/8e/6bac8eb487c6f827e4a0dd79de4dae92.jpg" alt="" />
           <p>
             Приходите к нам и ваша укладка станет прочнее, чем у Черной Вдовы в разгар битвы с Таносом
           </p>
